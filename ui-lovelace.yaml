@@ -1,0 +1,108 @@
+title: Home
+views:
+  - badges:
+      - person.justin_williamson
+      - sensor.owm_condition
+      - sensor.owm_temperature
+      - sun.sun
+    cards:
+      - entity: weather.openweathermap
+        name: Home
+        type: weather-forecast
+      - entities:
+          - switch.coffee_pot
+        show_header_toggle: true
+        title: Kitchen
+        type: entities
+      - entities:
+          - switch.living_room_fan
+        show_header_toggle: true
+        title: Living Room
+        type: entities
+      - entity: media_player.nexus_player
+        type: media-control
+      - entity: media_player.kodi_bedroom_local
+        type: media-control
+      - entity: media_player.livingroomtv
+        type: media-control
+      - entities:
+          - remote.livingroomtv
+        title: Remote
+        type: entities
+      - entity: media_player.emby_roku_sg_livingroomtv
+        type: media-control
+      - entity: media_player.emby_roku_sg_roku_premiere
+        type: media-control
+      - type: iframe
+        aspect_ratio: 90%
+        url: >-
+          https://embed.windy.com/embed2.html?lat=44.756&lon=-85.620&zoom=8&level=surface&overlay=rain&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=44.756&detailLon=-85.620&metricWind=default&metricTemp=default&radarRange=-1
+      
+      - type: picture-glance
+        title: Front Porch
+        entities: []
+        camera_image: camera.front_porch
+      
+      - type: picture-glance
+        title: Living Room
+        entities: []
+        camera_image: camera.livingroom
+      
+####### Living Room  
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+        - entity: switch.living_room_fan
+        show_header_toggle: false
+        title: Switches
+        type: entities
+      - type: picture-glance
+        title: Living Room
+        entities: []
+        camera_image: camera.livingroom
+      - entity: media_player.livingroomtv
+        type: media-control
+      - entity: media_player.emby_roku_sg_livingroomtv
+        type: media-control
+      - entity: media_player.googlehome1053
+        type: media-control
+    title: Living Room
+    
+######## Media
+  - badges: 
+    - sensor.transmission_down_speed
+    - sensor.transmission_up_speed
+    - sensor.transmission_started_torrents
+    cards:
+      - entities:
+          - entity: switch.living_room_fan
+        show_header_toggle: false
+        title: Switches
+        type: entities
+        camera_image: camera.livingroom
+      - entity: media_player.livingroomtv
+        type: media-control
+      - entity: media_player.emby_roku_sg_livingroomtv
+        type: media-control
+    title: Media
+
+    ######## Network
+  - badges: 
+    - binary_sensor.ping_binary_sensor
+    - sensor.transmission_down_speed
+    - sensor.transmission_up_speed
+    - sensor.pi_hole_ads_blocked_today
+    cards:
+      - entities:
+          - entity: switch.living_room_fan
+        show_header_toggle: false
+        title: Switches
+        type: entities
+        camera_image: camera.livingroom
+      - entity: media_player.livingroomtv
+        type: media-control
+      - entity: media_player.emby_roku_sg_livingroomtv
+        type: media-control
+    title: Network

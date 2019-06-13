@@ -1,0 +1,120 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat 
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  # Customization file
+  customize: !include customize.yaml
+
+frontend:
+  themes: !include themes.yaml
+
+lovelace:
+  mode: yaml
+
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Discover some devices automatically
+discovery:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: openweathermap
+    api_key: !secret openweathermap_key
+    monitored_conditions:
+      - weather
+      - temperature
+  #pihole ad count
+  - platform: pi_hole
+    host: !secret pihole_host
+      
+binary_sensor:
+  - platform: ping
+    host: google.com
+    count: 2
+    scan_interval: 60
+
+# Text to speech
+tts:
+  - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    service_name: google_say
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+device_tracker:
+  - platform: unifi
+    host: !secret unifi_host
+    username: !secret unifi_user
+    password: !secret unifi_pass
+    verify_ssl: false
+
+media_player:
+  - platform: emby
+    host: !secret emby_host
+    api_key: !secret emby_key
+    ssl: true
+    port: 8096
+
+weather:
+  - platform: openweathermap
+    api_key: !secret openweathermap_key
+    mode: freedaily
+
+camera:
+  - platform: generic
+    still_image_url: !secret camera_1_still
+    verify_ssl: false
+    username: !secret camera_user
+    password: !secret camera_pass
+    stream_source: !secret camera_1_stream
+    framerate: 5
+    name: LivingRoom
+
+camera 2:
+  - platform: generic
+    still_image_url: !secret camera_2_still
+    verify_ssl: false
+    username: !secret camera_user
+    password: !secret camera_pass
+    stream_source: !secret camera_2_stream
+    framerate: 5
+    name: Front Porch
+
+transmission:
+  host: !secret transmission_host
+  monitored_conditions: 
+    - download_speed
+    - upload_speed
+    - started_torrents
+
+google_assistant:
+  project_id: !secret google_assistant_project
+  api_key: !secret google_assistant_key
+  exposed_domains:
+    - switch
+    - light
+    - camera
+    - script
+
+cast:
+  media_player:
+    - host: !secret living_room_speaker

@@ -1,0 +1,24 @@
+- id: '1559928415495'
+  alias: Notify Of Internet Drop
+  trigger:
+  - entity_id: binary_sensor.ping_binary_sensor
+    from: connected
+    platform: state
+    to: disconnected
+  condition: []
+  action:
+  - data:
+      message: Network lost
+    entity_id: media_player.googlehome1053
+    service: tts.google_say
+- id: '1559938294913'
+  alias: DownloadComplete
+  trigger:
+  - platform: webhook
+    webhook_id: downloadcomplete
+  condition: []
+  action:
+  - data_template:
+      message: '{{ trigger.json.movie.title }} is now available on emby'
+    entity_id: media_player.googlehome1053
+    service: tts.google_say
