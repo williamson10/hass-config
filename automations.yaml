@@ -19,6 +19,19 @@
   condition: []
   action:
   - data_template:
-      message: '{{ trigger.json.movie.title }} is now available on emby'
+      message: New movie on Emby. {{ trigger.json.movie.title }} is now available.
+    entity_id: media_player.googlehome1053
+    service: tts.google_say
+- id: '1565648082277'
+  alias: Front Door Motion
+  trigger:
+  - platform: mqtt
+    topic: kitchen/CAM02/motion
+  condition: 
+    - condition: template
+      value_template: "{{ 'ON' in trigger.payload }}"
+  action:
+  - data_template:
+      message: Motion was detected at the front door.
     entity_id: media_player.googlehome1053
     service: tts.google_say

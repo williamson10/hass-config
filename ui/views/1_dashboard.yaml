@@ -1,0 +1,32 @@
+id: Dashboard
+title: Dashboard
+icon: mdi:view-dashboard
+#badges:
+#  - person.justin_williamson
+#  - sensor.owm_condition
+#  - sensor.owm_temperature
+#  - sun.sun
+cards:
+  - type: vertical-stack
+    columns: 12
+    cards:
+      - type: markdown
+        title: Links
+        content: |
+          [Portainer](http://docker:9000)
+          [VSCode-dev](http://docker:8444)
+          [VSCode-jekyll](http://docker:8443)
+          [Edge](https://edge.home.jwilliamson.me)
+          [Proxmox](https://10.10.10.67:8006)
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack 
+        cards:
+          - type: entity-button
+            entity: switch.living_room_fan
+            icon: mdi:fan
+      - type: custom:weather-card
+        entity: weather.openweathermap
+     
+    
+          

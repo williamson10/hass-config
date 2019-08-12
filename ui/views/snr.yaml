@@ -1,0 +1,37 @@
+---
+id: snr 
+title: snr
+icon: mdi:waves
+######## Network
+cards:
+  - type: history-graph
+    title: 'Cable Modem SNR'
+    hours_to_show: 80
+    entities:
+      - sensor.downstream1
+      - sensor.downstream2
+      - sensor.downstream3
+      - sensor.downstream4
+      - sensor.downstream5
+      - sensor.downstream6
+      - sensor.downstream7
+      - sensor.downstream8
+      - sensor.downstream9
+      - sensor.downstream10
+      - sensor.downstream11
+      - sensor.downstream12
+      - sensor.downstream13
+      - sensor.downstream14
+      - sensor.downstream15
+      - sensor.downstream16
+      - sensor.downstream17
+      - sensor.downstream18
+      - sensor.downstream19
+      - sensor.downstream20
+      - sensor.downstream21
+      - sensor.downstream22
+      - sensor.downstream23
+      - sensor.downstream24
+
+
+    

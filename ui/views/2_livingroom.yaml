@@ -1,0 +1,29 @@
+id: livingroom
+title: Living Room
+icon: mdi:human-male-boy
+
+cards:
+  - type: vertical-stack
+    cards:
+      - type: picture-glance
+        title: Living Room
+        entities:
+          - binary_sensor.cam01_motion_sensor
+          - switch.cam01_blue_led
+          - switch.cam01_yellow_led
+          - switch.cam01_night_mode
+          - sensor.cam01_light_sensor
+          - switch.cam01_h264_rtsp_server
+          - switch.cam01_ir_filter
+          - switch.cam01_ir_led
+        camera_image: camera.livingroom
+   
+  - type: entity-button
+    entity: switch.living_room_fan
+    icon: mdi:fan
+  - entity: media_player.livingroomtv
+    type: media-control
+  - entity: media_player.emby_roku_sg_livingroomtv
+    type: media-control
+  - entity: media_player.googlehome1053
+    type: media-control

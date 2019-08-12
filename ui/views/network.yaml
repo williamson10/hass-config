@@ -1,0 +1,36 @@
+---
+id: network 
+title: Network
+icon: mdi:server-network
+######## Network
+badges: 
+  - binary_sensor.google
+  - sensor.transmission_down_speed
+  - sensor.transmission_up_speed
+  - sensor.pi_hole_ads_blocked_today
+cards:
+  - type: horizontal-stack 
+    cards:
+      - type: entity-button
+        entity: switch.modem
+        icon: mdi:wan
+  - type: history-graph
+    title: 'Connectivity'
+    hours_to_show: 80
+    entities:
+      - binary_sensor.google
+      - binary_sensor.gateway
+      - binary_sensor.edge
+      - binary_sensor.modem
+      
+  - type: history-graph
+    title: 'Latency'
+    hours_to_show: 80
+    entities:
+      - sensor.google
+      - sensor.gateway
+      - sensor.edge
+      - sensor.modem
+
+
+    
