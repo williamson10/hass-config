@@ -19,7 +19,3 @@ cards:
           - switch.cam02_ir_led
 
         camera_image: camera.front_porch
-
-  - type: entity-button
-    entity: switch.coffee_pot
-    icon: mdi:coffee
