@@ -23,7 +23,16 @@ cards:
     icon: mdi:fan
   - entity: media_player.livingroomtv
     type: media-control
-  - entity: media_player.emby_roku_sg_livingroomtv
-    type: media-control
+
+  - type: custom:roku-card
+    entity: media_player.livingroomtv
+    name: TV
+    theme: darkpurple
+    tv: true
+    power:
+      service: switch.turn_on
+      service_data:
+        entity_id: switch.livingroomtv_power
+
   - entity: media_player.googlehome1053
     type: media-control
