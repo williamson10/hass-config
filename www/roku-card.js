@@ -230,7 +230,8 @@ const LitElement = Object.getPrototypeOf(
     }
   
     launchApp(e) {
-      if (e.currentTarget.value != "") {
+    //  if (e.currentTarget.value != "") {
+      if (false){
         this.hass.callService("media_player", "select_source", {
           entity_id: this._config.entity,
           source: e.currentTarget.value

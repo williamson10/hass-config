@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 frontend:
-  themes: !include themes.yaml
+  themes: !include_dir_named ui/themes
 
 lovelace:
   mode: yaml

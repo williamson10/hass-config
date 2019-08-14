@@ -27,7 +27,6 @@ cards:
   - type: custom:roku-card
     entity: media_player.livingroomtv
     name: TV
-    theme: darkpurple
     tv: true
     power:
       service: switch.turn_on

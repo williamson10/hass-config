@@ -13,6 +13,8 @@ resources:
     type: module
   - url: /local/roku-card.js?v=0
     type: module
+  - url: /local/synthwave.js?v=0
+    type: module
   
 # resources: !include_dir_list ui/resources
 views: !include_dir_list ui/views
