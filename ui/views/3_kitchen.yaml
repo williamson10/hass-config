@@ -3,7 +3,6 @@ title: Kitchen
 icon: mdi:silverware-variant
 
 cards: 
-
   - type: vertical-stack
     cards:
       - type: picture-glance
@@ -17,5 +16,7 @@ cards:
           - switch.cam02_h264_rtsp_server
           - switch.cam02_ir_filter
           - switch.cam02_ir_led
-
         camera_image: camera.front_porch
+  - type: entity-button
+    entity: input_boolean.front_motion
+    icon: mdi:motion-sensor

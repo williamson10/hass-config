@@ -22,11 +22,21 @@ cards:
     cards:
       - type: horizontal-stack 
         cards:
+          - type: custom:roku-card
+            entity: media_player.livingroomtv
+            name: TV
+            tv: true
+            power:
+              service: switch.turn_on
+              service_data:
+                entity_id: switch.livingroomtv_power
           - type: entity-button
             entity: switch.living_room_fan
             icon: mdi:fan
-      - type: custom:weather-card
-        entity: weather.openweathermap
-     
+          - type: custom:weather-card
+            entity: weather.openweathermap
+
+      
+
     
           

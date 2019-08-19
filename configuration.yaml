@@ -65,6 +65,8 @@ tts:
     cache_dir: /tmp/tts
     time_memory: 300
     service_name: google_say
+
+
 sensor: !include_dir_merge_list config/sensors
 group: !include groups.yaml
 automation: !include config/automations/automations.yaml
@@ -124,10 +126,11 @@ google_assistant:
     - light
     - camera
     - script
+    - input_boolean
 
-#cast:
-#  media_player:
-#    - host: !secret living_room_speaker
+cast:
+  media_player:
+   - host: !secret living_room_speaker
 
 googlehome:
   devices:
@@ -136,3 +139,8 @@ googlehome:
 
 roku:
   - host: !secret livingroom_tv
+
+input_boolean:
+  front_motion:
+    name: Front Door Motion Announcements
+    icon: mdi:motion-sensor

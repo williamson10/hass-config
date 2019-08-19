@@ -28,8 +28,13 @@
   - platform: mqtt
     topic: kitchen/CAM02/motion
   condition: 
-    - condition: template
-      value_template: "{{ 'ON' in trigger.payload }}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ 'ON' in trigger.payload }}"
+      - condition: state
+        entity_id: input_boolean.front_motion
+        state: "on"
   action:
   - data_template:
       message: Motion was detected at the front door.
