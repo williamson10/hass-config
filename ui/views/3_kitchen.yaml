@@ -17,6 +17,7 @@ cards:
           - switch.cam02_ir_filter
           - switch.cam02_ir_led
         camera_image: camera.front_porch
-  - type: entity-button
+  - type: "custom:button-card"
     entity: input_boolean.front_motion
     icon: mdi:motion-sensor
+    
