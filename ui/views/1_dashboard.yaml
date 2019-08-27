@@ -36,15 +36,20 @@ cards:
             camera_image: camera.front_porch
       - type: horizontal-stack 
         cards:
-          - type: "custom:button-card"
-            entity: input_boolean.front_motion
-            icon: mdi:motion-sensor
           - type: entity-button
             entity: switch.living_room_fan
             icon: mdi:fan
           - type: entity-button
             entity: switch.modem
             icon: mdi:wan
+      - type: horizontal-stack 
+        cards:
+          - type: "custom:button-card"
+            entity: input_boolean.front_motion
+            icon: mdi:motion-sensor
+          - type: "custom:button-card"
+            entity: input_boolean.motion_email
+            icon: mdi:email
       - type: horizontal-stack 
         cards:
           - type: history-graph

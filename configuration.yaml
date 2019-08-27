@@ -149,3 +149,11 @@ input_boolean:
   front_motion:
     name: Front Door Motion Announcements
     icon: mdi:motion-sensor
+  
+  motion_email:
+    name: Email Image on Motion
+    icon: mdi:email
+
+  warframe:
+    name: warframe
+    icon: mdi:xbox
