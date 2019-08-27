@@ -13,11 +13,12 @@ cards:
       - type: markdown
         title: Links
         content: |
-          [Portainer](http://docker:9000)
+          [Portainer](http://docker:1234)
           [VSCode-dev](http://docker:8444)
           [VSCode-jekyll](http://docker:8443)
           [Edge](https://edge.home.jwilliamson.me)
           [Proxmox](https://10.10.10.67:8006)
+          [NodeRed](http://docker:1880)
   - type: vertical-stack
     cards:
       - type: horizontal-stack
