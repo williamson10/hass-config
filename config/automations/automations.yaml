@@ -1,16 +1,3 @@
-- id: '1559928415495'
-  alias: Notify Of Internet Drop
-  trigger:
-  - entity_id: binary_sensor.ping_binary_sensor
-    from: connected
-    platform: state
-    to: disconnected
-  condition: []
-  action:
-  - data:
-      message: Network lost
-    entity_id: media_player.googlehome1053
-    service: tts.google_say
 - id: '1559938294913'
   alias: DownloadComplete
   trigger:
@@ -20,23 +7,5 @@
   action:
   - data_template:
       message: New movie on Emby. {{ trigger.json.movie.title }} is now available.
-    entity_id: media_player.googlehome1053
-    service: tts.google_say
-- id: '1565648082277'
-  alias: Front Door Motion
-  trigger:
-  - platform: mqtt
-    topic: kitchen/CAM02/motion
-  condition: 
-    condition: and
-    conditions:
-      - condition: template
-        value_template: "{{ 'ON' in trigger.payload }}"
-      - condition: state
-        entity_id: input_boolean.front_motion
-        state: "on"
-  action:
-  - data_template:
-      message: Motion was detected at the front door.
     entity_id: media_player.googlehome1053
     service: tts.google_say
