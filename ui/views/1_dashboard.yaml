@@ -1,11 +1,7 @@
 id: Dashboard
 title: Dashboard
 icon: mdi:view-dashboard
-#badges:
-#  - person.justin_williamson
-#  - sensor.owm_condition
-#  - sensor.owm_temperature
-#  - sun.sun
+
 cards:
   - type: vertical-stack
     columns: 12
@@ -51,16 +47,21 @@ cards:
           - type: "custom:button-card"
             entity: input_boolean.motion_email
             icon: mdi:email
+          - type: "custom:button-card"
+            entity: input_boolean.guest_mode
+          - type: "custom:button-card"
+            entity: input_boolean.party_mode
+            
       - type: horizontal-stack 
         cards:
           - type: history-graph
             title: 'Connectivity'
             hours_to_show: 80
             entities:
-              - binary_sensor.google
               - binary_sensor.gateway
-              - binary_sensor.publicip
               - binary_sensor.modem
+              - binary_sensor.publicip
+              - binary_sensor.google
 
 #  - type: entities
 #    entities:

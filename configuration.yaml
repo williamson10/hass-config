@@ -90,6 +90,11 @@ media_player:
     device: !secret xbox_id
     name: Living Room Xbox One
     ip_address: !secret xbox_ip
+
+  - platform: spotify
+    client_id: !secret spotify_id
+    client_secret: !secret spotify_key
+   
     
 weather:
   - platform: openweathermap
@@ -157,3 +162,15 @@ input_boolean:
   warframe:
     name: warframe
     icon: mdi:xbox
+
+  guest_mode:
+    name: Guest Mode
+    icon: mdi:human-male-female
+
+  party_mode:
+    name: Party Mode
+    icon: mdi:firework
+
+  default_mode:
+    name: Default Mode
+    icon: mdi:home
