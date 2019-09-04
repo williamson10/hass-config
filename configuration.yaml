@@ -174,3 +174,11 @@ input_boolean:
   default_mode:
     name: Default Mode
     icon: mdi:home
+  
+  night_mode:
+    name: Night Mode
+    icon: mdi:sleep
+  
+  weekend_mode:
+    name: Weekend Mode
+    icon: mdi:sofa #find better
