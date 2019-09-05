@@ -163,6 +163,10 @@ input_boolean:
     name: warframe
     icon: mdi:xbox
 
+  ordis:
+    name: Ordis
+    icon: mdi:codepen
+
   guest_mode:
     name: Guest Mode
     icon: mdi:human-male-female
