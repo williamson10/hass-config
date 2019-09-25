@@ -109,7 +109,7 @@ camera:
     password: !secret camera_pass
     stream_source: !secret camera_1_stream
     framerate: 5
-    name: LivingRoom
+    name: Kitchen
 
 camera 2:
   - platform: generic
@@ -119,7 +119,7 @@ camera 2:
     password: !secret camera_pass
     stream_source: !secret camera_2_stream
     framerate: 5
-    name: Front Porch
+    name: Garage
 
 transmission:
   host: !secret transmission_host
@@ -140,7 +140,8 @@ google_assistant:
 
 cast:
   media_player:
-   - host: !secret living_room_speaker
+    - host: !secret kitchen_speaker
+    - host: !secret living_room_soundbar 
 
 #googlehome:
 #  devices:
@@ -186,3 +187,13 @@ input_boolean:
   weekend_mode:
     name: Weekend Mode
     icon: mdi:sofa #find better
+
+group:
+  house_modes:
+    name: House Modes
+    entities:
+      - input_boolean.weekend_mode
+      - input_boolean.night_mode
+      - input_boolean.default_mode
+      - input_boolean.party_mode
+      - input_boolean.guest_mode
