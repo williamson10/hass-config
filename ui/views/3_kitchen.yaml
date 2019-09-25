@@ -6,18 +6,26 @@ cards:
   - type: vertical-stack
     cards:
       - type: picture-glance
-        title: Front Porch
+        title: Kitchen
         entities:
-          - binary_sensor.cam02_motion_sensor
-          - switch.cam02_blue_led
-          - switch.cam02_yellow_led
-          - switch.cam02_night_mode
-          - sensor.cam02_light_sensor
-          - switch.cam02_h264_rtsp_server
-          - switch.cam02_ir_filter
-          - switch.cam02_ir_led
-        camera_image: camera.front_porch
+          - binary_sensor.cam01_motion_sensor
+          - switch.cam01_blue_led
+          - switch.cam01_yellow_led
+          - switch.cam01_night_mode
+          - sensor.cam01_light_sensor
+          - switch.cam01_h264_rtsp_server
+          - switch.cam01_ir_filter
+          - switch.cam01_ir_led
+        camera_image: camera.kitchen
+
+
   - type: "custom:button-card"
     entity: input_boolean.front_motion
     icon: mdi:motion-sensor
-    
+  - type: entity-button
+    entity: switch.kitchen_sink_light
+    icon: mdi:lightbulb
+  - entity: media_player.googlehome1053
+    type: media-control
+  
+  
