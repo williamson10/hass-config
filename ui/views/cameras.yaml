@@ -6,7 +6,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: picture-glance
-        title: Living Room
+        title: Kitchen
         entities:
           - binary_sensor.cam01_motion_sensor
           - switch.cam01_blue_led
@@ -16,9 +16,9 @@ cards:
           - switch.cam01_h264_rtsp_server
           - switch.cam01_ir_filter
           - switch.cam01_ir_led
-        camera_image: camera.livingroom
+        camera_image: camera.kitchen
       - type: picture-glance
-        title: Front Porch
+        title: Garage
         entities:
           - binary_sensor.cam02_motion_sensor
           - switch.cam02_blue_led
@@ -28,4 +28,4 @@ cards:
           - switch.cam02_h264_rtsp_server
           - switch.cam02_ir_filter
           - switch.cam02_ir_led
-        camera_image: camera.front_porch
+        camera_image: camera.garage
