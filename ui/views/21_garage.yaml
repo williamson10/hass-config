@@ -1,0 +1,17 @@
+id: garage
+title: garage
+icon: mdi:garage
+
+cards:
+  - type: picture-glance
+    title: Garage
+    entities:
+      - binary_sensor.cam02_motion_sensor
+      - switch.cam02_blue_led
+      - switch.cam02_yellow_led
+      - switch.cam02_night_mode
+      - sensor.cam02_light_sensor
+      - switch.cam02_h264_rtsp_server
+      - switch.cam02_ir_filter
+      - switch.cam02_ir_led
+    camera_image: camera.garage
