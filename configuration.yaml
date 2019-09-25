@@ -95,7 +95,10 @@ media_player:
     client_id: !secret spotify_id
     client_secret: !secret spotify_key
    
-    
+#pihole ad count
+pi_hole:
+  host: !secret pihole_host
+
 weather:
   - platform: openweathermap
     api_key: !secret openweathermap_key

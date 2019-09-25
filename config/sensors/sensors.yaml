@@ -1,148 +1,144 @@
 # Sensors
-sensor:
-  # Weather prediction
-  - platform: openweathermap
-    api_key: !secret openweathermap_key
-    monitored_conditions:
-      - weather
-      - temperature
-  # cable modem
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(2) > td:nth-of-type(5)"
-    name: downstream1
-    unit_of_measurement: 'db'
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(3) > td:nth-of-type(5)"
-    name: downstream2
-    unit_of_measurement: 'db'
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(4) > td:nth-of-type(5)"
-    name: downstream3
-    unit_of_measurement: 'db'
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(5) > td:nth-of-type(5)"
-    name: downstream4
-    unit_of_measurement: 'db'
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(6) > td:nth-of-type(5)"
-    name: downstream5
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(7) > td:nth-of-type(5)"
-    name: downstream6
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(8) > td:nth-of-type(5)"
-    name: downstream7
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(9) > td:nth-of-type(5)"
-    name: downstream8
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(10) > td:nth-of-type(5)"
-    name: downstream9
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(11) > td:nth-of-type(5)"
-    name: downstream10
-    unit_of_measurement: 'db' 
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(12) > td:nth-of-type(5)"
-    name: downstream11
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(13) > td:nth-of-type(5)"
-    name: downstream12
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(14) > td:nth-of-type(5)"
-    name: downstream13
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(15) > td:nth-of-type(5)"
-    name: downstream14
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(16) > td:nth-of-type(5)"
-    name: downstream15
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(17) > td:nth-of-type(5)"
-    name: downstream16
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(18) > td:nth-of-type(5)"
-    name: downstream17
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(19) > td:nth-of-type(5)"
-    name: downstream18
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(20) > td:nth-of-type(5)"
-    name: downstream19
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(21) > td:nth-of-type(5)"
-    name: downstream20
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(22) > td:nth-of-type(5)"
-    name: downstream21
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(23) > td:nth-of-type(5)"
-    name: downstream22
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(24) > td:nth-of-type(5)"
-    name: downstream23
-    unit_of_measurement: 'db'  
-  - platform: scrape
-    resource: http://192.168.100.1/cgi-bin/status_cgi
-    select: "tr:nth-of-type(25) > td:nth-of-type(5)"
-    name: downstream24
-    unit_of_measurement: 'db'  
 
-  #pihole ad count
-  - platform: pi_hole
-    host: 10.65.65.65
-  #ping 
-  - platform: template
-    sensors:
-      publicip:
-        value_template: '{% if is_state("binary_sensor.publicip", "on") %} {{ states.binary_sensor.publicip.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
-        unit_of_measurement: 'ms'
-      google:
-        value_template: '{% if is_state("binary_sensor.google", "on") %} {{ states.binary_sensor.google.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
-        unit_of_measurement: 'ms'
-      gateway:
-        value_template: '{% if is_state("binary_sensor.gateway", "on") %} {{ states.binary_sensor.gateway.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
-        unit_of_measurement: 'ms'
-      modem:
-        value_template: '{% if is_state("binary_sensor.modem", "on") %} {{ states.binary_sensor.modem.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
-        unit_of_measurement: 'ms'
+# Weather prediction
+- platform: openweathermap
+  api_key: !secret openweathermap_key
+  monitored_conditions:
+    - weather
+    - temperature
+# cable modem
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(2) > td:nth-of-type(5)"
+  name: downstream1
+  unit_of_measurement: 'db'
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(3) > td:nth-of-type(5)"
+  name: downstream2
+  unit_of_measurement: 'db'
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(4) > td:nth-of-type(5)"
+  name: downstream3
+  unit_of_measurement: 'db'
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(5) > td:nth-of-type(5)"
+  name: downstream4
+  unit_of_measurement: 'db'
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(6) > td:nth-of-type(5)"
+  name: downstream5
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(7) > td:nth-of-type(5)"
+  name: downstream6
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(8) > td:nth-of-type(5)"
+  name: downstream7
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(9) > td:nth-of-type(5)"
+  name: downstream8
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(10) > td:nth-of-type(5)"
+  name: downstream9
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(11) > td:nth-of-type(5)"
+  name: downstream10
+  unit_of_measurement: 'db' 
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(12) > td:nth-of-type(5)"
+  name: downstream11
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(13) > td:nth-of-type(5)"
+  name: downstream12
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(14) > td:nth-of-type(5)"
+  name: downstream13
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(15) > td:nth-of-type(5)"
+  name: downstream14
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(16) > td:nth-of-type(5)"
+  name: downstream15
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(17) > td:nth-of-type(5)"
+  name: downstream16
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(18) > td:nth-of-type(5)"
+  name: downstream17
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(19) > td:nth-of-type(5)"
+  name: downstream18
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(20) > td:nth-of-type(5)"
+  name: downstream19
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(21) > td:nth-of-type(5)"
+  name: downstream20
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(22) > td:nth-of-type(5)"
+  name: downstream21
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(23) > td:nth-of-type(5)"
+  name: downstream22
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(24) > td:nth-of-type(5)"
+  name: downstream23
+  unit_of_measurement: 'db'  
+- platform: scrape
+  resource: http://192.168.100.1/cgi-bin/status_cgi
+  select: "tr:nth-of-type(25) > td:nth-of-type(5)"
+  name: downstream24
+  unit_of_measurement: 'db'  
+#ping 
+- platform: template
+  sensors:
+    publicip:
+      value_template: '{% if is_state("binary_sensor.publicip", "on") %} {{ states.binary_sensor.publicip.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
+      unit_of_measurement: 'ms'
+    google:
+      value_template: '{% if is_state("binary_sensor.google", "on") %} {{ states.binary_sensor.google.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
+      unit_of_measurement: 'ms'
+    gateway:
+      value_template: '{% if is_state("binary_sensor.gateway", "on") %} {{ states.binary_sensor.gateway.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
+      unit_of_measurement: 'ms'
+    modem:
+      value_template: '{% if is_state("binary_sensor.modem", "on") %} {{ states.binary_sensor.modem.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
+      unit_of_measurement: 'ms'
