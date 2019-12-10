@@ -142,3 +142,27 @@
     modem:
       value_template: '{% if is_state("binary_sensor.modem", "on") %} {{ states.binary_sensor.modem.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
       unit_of_measurement: 'ms'
+#Furnace On or Off
+- platform: template
+  sensors:
+    furnace:
+      friendly_name: "Furnace"
+      value_template: "{{ state_attr('climate.thermostat_73_E6_A4', 'hvac_action') }}"
+#Soundbar volume
+- platform: template
+  sensors:
+    soundbar_current_volume:
+      friendly_name: "Soundbar Current Volume"
+      value_template: "{{ state_attr('media_player.living_room_sound_bar', 'volume_level')| round(2) }}"
+      unit_of_measurement: '%'
+    soundbar_boost_volume:
+      friendly_name: "Soundbar Boost Volume"
+      value_template: "{{ states('sensor.soundbar_current_volume') | float * 1.25 }}"
+      unit_of_measurement: '%'
+    soundbar_base_volume:
+      friendly_name: "Soundbar Base Volume"
+      value_template: "{{ states('sensor.soundbar_current_volume') | float / 1.25 }}"
+      unit_of_measurement: '%'
+    soundbar_muted:
+      friendly_name: "Soundbar Muted"
+      value_template: "{{ state_attr('media_player.living_room_sound_bar', 'is_volume_muted')}}"
