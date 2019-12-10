@@ -180,8 +180,6 @@ input_boolean:
     name: Weekend Mode
     icon: mdi:sofa #find better
 
-browser_mod:
-
 climate:
   - platform: radiotherm
     host:
