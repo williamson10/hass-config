@@ -1,0 +1,8 @@
+house_modes:
+  name: House Modes
+  entities:
+    - input_boolean.weekend_mode
+    - input_boolean.night_mode
+    - input_boolean.default_mode
+    - input_boolean.party_mode
+    - input_boolean.guest_mode
