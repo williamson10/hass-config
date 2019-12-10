@@ -1,11 +1,12 @@
 secrets.yaml
 .storage/
 .cloud/
+.Trash-1000
 deps/
 tts/
 home-assistant.log
 home-assistant_v2.db
 known_devices.yaml
-custom_components/xboxone/__pycache__/__init__.cpython-37.pyc
-custom_components/xboxone/__pycache__/media_player.cpython-37.pyc
 .spotify-token-cache
+**/*.pyc
+custom_components/
