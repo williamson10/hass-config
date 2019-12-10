@@ -19,13 +19,13 @@ cards:
         camera_image: camera.kitchen
 
 
-  - type: "custom:button-card"
-    entity: input_boolean.front_motion
-    icon: mdi:motion-sensor
-  - type: entity-button
-    entity: switch.kitchen_sink_light
-    icon: mdi:lightbulb
-  - entity: media_player.googlehome1053
-    type: media-control
+      - type: "custom:button-card"
+        entity: input_boolean.front_motion
+        icon: mdi:motion-sensor
+      - type: entity-button
+        entity: switch.kitchen_sink_light
+        icon: mdi:lightbulb
+      - entity: media_player.googlehome1053
+        type: media-control
   
   

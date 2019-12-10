@@ -14,11 +14,15 @@ homeassistant:
   customize: !include customize.yaml
 
 frontend:
-  themes: !include_dir_named ui/themes
+  themes: !include_dir_merge_named themes
 
 lovelace:
   mode: yaml
 
+hacs:
+  token: !secret github_key
+  theme: true
+  python_script: true
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -56,8 +60,8 @@ binary_sensor:
     count: 2
     scan_interval: 30
     name: Modem
-
-
+  - platform: wyzesense
+    device: "/dev/hidraw1"
 # Text to speech
 tts:
   - platform: google_translate
@@ -66,18 +70,16 @@ tts:
     time_memory: 300
     service_name: google_say
 
-
 sensor: !include_dir_merge_list config/sensors
-group: !include groups.yaml
+group: !include config/groups.yaml
 automation: !include config/automations/automations.yaml
 script: !include scripts.yaml
 
-device_tracker:
-  - platform: unifi
-    host: !secret unifi_host
-    username: !secret unifi_user
-    password: !secret unifi_pass
-    verify_ssl: false
+panel_iframe:
+  esphome:
+    title: esphome
+    url: !secret esphome_url
+    icon: mdi:banana
 
 media_player:
   - platform: emby
@@ -126,30 +128,17 @@ camera 2:
 
 transmission:
   host: !secret transmission_host
-  monitored_conditions: 
-    - download_speed
-    - upload_speed
-    - started_torrents
-
+  
 google_assistant:
   project_id: !secret google_assistant_project
   api_key: !secret google_assistant_key
   exposed_domains:
     - switch
+    - binary_sensor
     - light
     - camera
     - script
     - input_boolean
-
-cast:
-  media_player:
-    - host: !secret kitchen_speaker
-    - host: !secret living_room_soundbar 
-
-#googlehome:
-#  devices:
-#    - host: !secret living_room_speaker
-#      track_alarms: true
 
 roku:
   - host: !secret livingroom_tv
@@ -191,12 +180,9 @@ input_boolean:
     name: Weekend Mode
     icon: mdi:sofa #find better
 
-group:
-  house_modes:
-    name: House Modes
-    entities:
-      - input_boolean.weekend_mode
-      - input_boolean.night_mode
-      - input_boolean.default_mode
-      - input_boolean.party_mode
-      - input_boolean.guest_mode
+browser_mod:
+
+climate:
+  - platform: radiotherm
+    host:
+      - !secret thermostat_ip
