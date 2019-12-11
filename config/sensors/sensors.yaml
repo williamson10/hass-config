@@ -161,7 +161,7 @@
       unit_of_measurement: '%'
     soundbar_base_volume:
       friendly_name: "Soundbar Base Volume"
-      value_template: "{{ states('sensor.soundbar_current_volume') | float / 1.25 }}"
+      value_template: "{{ states('sensor.soundbar_boost_volume') | float / 1.25 }}"
       unit_of_measurement: '%'
     soundbar_muted:
       friendly_name: "Soundbar Muted"
