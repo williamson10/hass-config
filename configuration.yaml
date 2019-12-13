@@ -184,3 +184,5 @@ climate:
   - platform: radiotherm
     host:
       - !secret thermostat_ip
+
+mobile_app:
