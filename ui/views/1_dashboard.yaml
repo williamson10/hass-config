@@ -77,10 +77,11 @@ cards:
               - binary_sensor.modem
               - binary_sensor.publicip
               - binary_sensor.google
-  - entity: media_player.spotify
-    type: media-control
   - entity: light.merkbulb_esphome
     type: light
+  - entity: media_player.spotify
+    type: media-control
+  
   
 #  - type: entities
 #    entities:
