@@ -79,6 +79,9 @@ cards:
               - binary_sensor.google
   - entity: media_player.spotify
     type: media-control
+  - entity: light.merkbulb_esphome
+    type: light
+  
 #  - type: entities
 #    entities:
 #      - type: cast
