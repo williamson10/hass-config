@@ -21,6 +21,15 @@ resources:
     type: js
   - url: /community_plugin/lovelace-card-mod/card-mod.js?v=1
     type: js
+  - url: /community_plugin/custom-header/custom-header.js
+    type: module
   
 # resources: !include_dir_list ui/resources
 views: !include_dir_list ui/views
+
+custom_header:
+  header_text: '{{ time }}' # See templates section for more on this.
+  compact_mode: true
+  #footer_mode: true
+  hide_help: true
+  split_mode: true
