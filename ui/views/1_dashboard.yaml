@@ -10,6 +10,15 @@ cards:
       - type: thermostat
         entity: climate.thermostat_73_e6_a4
         name: Home
+      - type: horizontal-stack 
+        cards:
+          - entity: light.garage_steps
+            type: light
+          - entity: light.stairway
+            type: light
+      
+  - type: vertical-stack
+    cards:
       - type : horizontal-stack
         cards:
           - type: glance
@@ -26,8 +35,6 @@ cards:
                 name: Upstairs
               - entity: binary_sensor.garage_side_door
                 name: Garage Side
-  - type: vertical-stack
-    cards:
       - type: horizontal-stack
         cards:
           - type: picture-glance
@@ -67,18 +74,18 @@ cards:
           - type: "custom:button-card"
             entity: input_boolean.party_mode
             
-      - type: horizontal-stack 
-        cards:
-          - type: history-graph
-            title: 'Connectivity'
-            hours_to_show: 80
-            entities:
-              - binary_sensor.gateway
-              - binary_sensor.modem
-              - binary_sensor.publicip
-              - binary_sensor.google
-  - entity: light.merkbulb_esphome
-    type: light
+      
+  
+  - type: horizontal-stack 
+    cards:
+      - type: history-graph
+        title: 'Connectivity'
+        hours_to_show: 80
+        entities:
+          - binary_sensor.gateway
+          - binary_sensor.modem
+          - binary_sensor.publicip
+          - binary_sensor.google
   - entity: media_player.spotify
     type: media-control
   
