@@ -23,6 +23,8 @@ resources:
     type: js
   - url: /community_plugin/custom-header/custom-header.js
     type: module
+  - url: /community_plugin/simple-thermostat/simple-thermostat.js
+    type: module
   
 # resources: !include_dir_list ui/resources
 views: !include_dir_list ui/views
