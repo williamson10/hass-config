@@ -7,15 +7,24 @@ icon: mdi:view-dashboard
 cards:
   - type: vertical-stack
     cards:
-      - type: thermostat
+      - type: custom:simple-thermostat
         entity: climate.thermostat_73_e6_a4
-        name: Home
+        name: False
+        control: False
+        style: |
+          ha-card{
+            --st-mode-background: black
+          }
+
       - type: horizontal-stack 
         cards:
           - entity: light.garage_steps
             type: light
           - entity: light.stairway
             type: light
+          - entity: light.master_bedroom_merkwhite
+            type: light
+            name: Bedroom
       
   - type: vertical-stack
     cards:
@@ -31,8 +40,8 @@ cards:
                 icon: mdi:garage
               - entity: binary_sensor.stranger_door
                 name: Stranger
-              - entity: binary_sensor.upstairs_door
-                name: Upstairs
+              - entity: binary_sensor.bathroom_door
+                name: Bathroom
               - entity: binary_sensor.garage_side_door
                 name: Garage Side
       - type: horizontal-stack
