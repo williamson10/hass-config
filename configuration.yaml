@@ -21,8 +21,8 @@ lovelace:
 
 hacs:
   token: !secret github_key
-  theme: true
-  python_script: true
+  #theme: true
+  #python_script: true
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -87,6 +87,12 @@ media_player:
     api_key: !secret emby_key
     ssl: true
     port: 8096
+    auto_hide: True
+
+  #- platform: lg_soundbar
+  #  host: !secret lg_soundbar
+  #  name: lg_soundbar
+  #  entity_id: lg_soundbar
 
   - platform: xboxone
     device: !secret xbox_id
@@ -134,8 +140,8 @@ google_assistant:
   api_key: !secret google_assistant_key
   exposed_domains:
     - switch
-    - binary_sensor
     - light
+    - climate
     - camera
     - script
     - input_boolean
@@ -175,7 +181,12 @@ input_boolean:
   night_mode:
     name: Night Mode
     icon: mdi:sleep
-  
+
+  restart_hass:
+    name: Restart Hass Container
+    icon: mdi:refresh
+    initial: off
+
   weekend_mode:
     name: Weekend Mode
     icon: mdi:sofa #find better
@@ -185,4 +196,17 @@ climate:
     host:
       - !secret thermostat_ip
 
+spotcast:
+  username: !secret spotify_user
+  password: !secret spotify_pass
+
+
+
 mobile_app:
+
+cast:
+  media_player:
+    - host: !secret kitchen_speaker
+    - host: !secret bathroom_speaker
+    - host: !secret master_bedroom_soundbar
+      name: New Test
